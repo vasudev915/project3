@@ -7,7 +7,8 @@ sudo service docker start
 sudo usermod -a -G docker ec2-user
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-git clone https://github.com/vasudev915/wordpress-db-yaml.git ~
+mkdir git
+git clone https://github.com/vasudev915/wordpress-db-yaml.git /home/ec2-user/git/
 cd wordpress-db-yaml
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose up -d
