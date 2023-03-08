@@ -1,0 +1,18 @@
+pipeline {
+  agent any
+    tools {
+      dockerTool 'docker'
+    }
+  stages{
+    stage('git') {
+      steps {
+        git branch: 'main', url: 'https://github.com/vasudev915/project3.git'
+        }
+    }
+  stage ('docker-compose'){
+    steps {
+      sh'docker-compose up -d'
+      }
+    }
+  }
+}
